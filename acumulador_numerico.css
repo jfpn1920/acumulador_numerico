@@ -1,0 +1,169 @@
+/* ===== VARIABLES DE COLOR (se usan en todo el archivo) ===== */
+:root {
+    --fondo: #eef3f2;          /* fondo de la página */
+    --panel: #ffffff;          /* fondo de las tarjetas */
+    --texto: #1d2b2c;          /* color principal del texto */
+    --texto-suave: #5f7172;    /* textos secundarios */
+    --borde: #d2dddc;          /* color de los bordes */
+    --acento: #0f5e63;         /* verde azulado: botón principal */
+    --alerta: #b3401f;         /* rojo anaranjado: reiniciar */
+}
+/* ===== REINICIO BÁSICO ===== */
+* {
+    box-sizing: border-box;    /* el padding no agranda los elementos */
+    margin: 0;
+    padding: 0;
+}
+/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+body {
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+    padding: 24px 16px;
+}
+/* Contenedor central con ancho máximo */
+.app {
+    max-width: 440px;
+    margin: 0 auto;
+}
+/* ===== ENCABEZADO ===== */
+.encabezado {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.encabezado h1 {
+    font-size: 2rem;
+    color: var(--acento);
+}
+.encabezado p {
+    color: var(--texto-suave);
+}
+/* ===== TARJETAS (paneles) ===== */
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+.panel h2 {
+    font-size: 1.1rem;
+}
+/* ===== CONTADOR ===== */
+.contador {
+    display: flex;
+    flex-direction: column;    /* todo apilado y centrado */
+    align-items: center;
+    gap: 10px;
+}
+.etiqueta {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+.valor {
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--acento);
+}
+/* Pequeña animación cada vez que cambia el número (clase agregada con JS) */
+.valor.pulso {
+    animation: pulso 0.25s ease;
+}
+@keyframes pulso {
+    50% { transform: scale(1.15); }
+}
+/* ===== BOTONES ===== */
+.btn-sumar {
+    width: 100%;
+    padding: 18px;
+    background: var(--acento);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+.btn-sumar:active {
+    transform: scale(0.98);    /* efecto de "hundirse" al presionar */
+}
+.btn-restar {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    color: var(--acento);
+    border: 1px solid var(--acento);
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+/* ===== CAMPO DE INCREMENTO ===== */
+.campo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+input {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+input:focus {
+    outline: 2px solid var(--acento);
+}
+/* ===== ESTADÍSTICAS ===== */
+.estadisticas {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.dato {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 14px 20px;
+}
+.dato span {
+    font-size: 0.9rem;
+    color: var(--texto-suave);
+}
+.dato strong {
+    font-size: 1.6rem;
+}
+/* ===== HISTORIAL ===== */
+.historial-cabecera {
+    display: flex;
+    justify-content: space-between;  /* título a la izquierda, botón a la derecha */
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+.btn-reiniciar {
+    background: none;
+    border: none;
+    color: var(--alerta);
+    cursor: pointer;
+}
+.historial {
+    list-style: none;
+}
+.historial li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--borde);
+}
+.historial li:last-child {
+    border-bottom: none;
+}
+.hora,
+.vacio {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
