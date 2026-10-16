@@ -1,20 +1,17 @@
-/* ===== VARIABLES DE COLOR (se usan en todo el archivo) ===== */
-:root {
-    --fondo: #eef3f2;          /* fondo de la página */
-    --panel: #ffffff;          /* fondo de las tarjetas */
-    --texto: #1d2b2c;          /* color principal del texto */
-    --texto-suave: #5f7172;    /* textos secundarios */
-    --borde: #d2dddc;          /* color de los bordes */
-    --acento: #0f5e63;         /* verde azulado: botón principal */
-    --alerta: #b3401f;         /* rojo anaranjado: reiniciar */
-}
-/* ===== REINICIO BÁSICO ===== */
 * {
-    box-sizing: border-box;    /* el padding no agranda los elementos */
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-/* ===== ESTILO GENERAL DE LA PÁGINA ===== */
+:root {
+    --fondo: #eef3f2;
+    --panel: #ffffff;
+    --texto: #1d2b2c;
+    --texto-suave: #5f7172;
+    --borde: #d2dddc;
+    --acento: #0f5e63;
+    --alerta: #b3401f;
+}
 body {
     font-family: "Trebuchet MS", "Segoe UI", sans-serif;
     background: var(--fondo);
@@ -22,12 +19,13 @@ body {
     line-height: 1.5;
     padding: 24px 16px;
 }
-/* Contenedor central con ancho máximo */
+/*---------------------------------*/
+/*--|estilos_acumulador_numerico|--*/     
+/*---------------------------------*/
 .app {
     max-width: 440px;
     margin: 0 auto;
 }
-/* ===== ENCABEZADO ===== */
 .encabezado {
     margin-bottom: 20px;
     text-align: center;
@@ -39,7 +37,9 @@ body {
 .encabezado p {
     color: var(--texto-suave);
 }
-/* ===== TARJETAS (paneles) ===== */
+/*----------------------------*/
+/*--|estilos_de_los_paneles|--*/
+/*----------------------------*/
 .panel {
     background: var(--panel);
     border: 1px solid var(--borde);
@@ -50,10 +50,12 @@ body {
 .panel h2 {
     font-size: 1.1rem;
 }
-/* ===== CONTADOR ===== */
+/*-------------------------------*/
+/*--|estilos_contador_numerico|--*/
+/*-------------------------------*/
 .contador {
     display: flex;
-    flex-direction: column;    /* todo apilado y centrado */
+    flex-direction: column;
     align-items: center;
     gap: 10px;
 }
@@ -66,14 +68,17 @@ body {
     line-height: 1;
     color: var(--acento);
 }
-/* Pequeña animación cada vez que cambia el número (clase agregada con JS) */
 .valor.pulso {
     animation: pulso 0.25s ease;
 }
 @keyframes pulso {
-    50% { transform: scale(1.15); }
+    50% {
+        transform: scale(1.15);
+    }
 }
-/* ===== BOTONES ===== */
+/*------------------------------*/
+/*--|estilos_boton_para_sumar|--*/
+/*------------------------------*/
 .btn-sumar {
     width: 100%;
     padding: 18px;
@@ -85,8 +90,11 @@ body {
     cursor: pointer;
 }
 .btn-sumar:active {
-    transform: scale(0.98);    /* efecto de "hundirse" al presionar */
+    transform: scale(0.98);
 }
+/*-------------------------------*/
+/*--|estilos_boton_para_restar|--*/
+/*-------------------------------*/
 .btn-restar {
     width: 100%;
     padding: 10px;
@@ -97,7 +105,9 @@ body {
     font-size: 1rem;
     cursor: pointer;
 }
-/* ===== CAMPO DE INCREMENTO ===== */
+/*---------------------------------*/
+/*--|estilos_campo_de_incremento|--*/
+/*---------------------------------*/
 .campo {
     display: flex;
     align-items: center;
@@ -105,6 +115,9 @@ body {
     font-size: 0.9rem;
     color: var(--texto-suave);
 }
+/*------------------------------*/
+/*--|estilos_campo_de_entrada|--*/
+/*------------------------------*/
 input {
     width: 80px;
     padding: 8px;
@@ -115,12 +128,17 @@ input {
 input:focus {
     outline: 2px solid var(--acento);
 }
-/* ===== ESTADÍSTICAS ===== */
+/*----------------------------------------*/
+/*--|estilos_contenedor_de_estadisticas|--*/
+/*----------------------------------------*/
 .estadisticas {
     display: flex;
     gap: 16px;
     margin-bottom: 16px;
 }
+/*--------------------------------------*/
+/*--|estilos_tarjetas_de_estadisticas|--*/
+/*--------------------------------------*/
 .dato {
     flex: 1;
     display: flex;
@@ -137,10 +155,12 @@ input:focus {
 .dato strong {
     font-size: 1.6rem;
 }
-/* ===== HISTORIAL ===== */
+/*--------------------------------------*/
+/*--|estilos_encabezado_del_historial|--*/
+/*--------------------------------------*/
 .historial-cabecera {
     display: flex;
-    justify-content: space-between;  /* título a la izquierda, botón a la derecha */
+    justify-content: space-between;
     align-items: baseline;
     margin-bottom: 8px;
 }

@@ -13,51 +13,53 @@
     <!--|estructuracion_acumulador_numerico|-->
     <!---------------------------------------->
     <main class="app">
-        <!-- ENCABEZADO: título y descripción -->
         <header class="encabezado">
             <h1>Acumulador Numérico</h1>
             <p>Presiona el botón y el contador aumentará.</p>
         </header>
-        <!-- PANEL 1: contador y botones principales -->
+        <!------------------------>
+        <!--|panel_del_contador|-->
+        <!------------------------>
         <section class="panel contador">
             <span class="etiqueta">Valor actual</span>
-            <!-- Aquí JavaScript escribe el número del contador -->
             <strong id="valor" class="valor">0</strong>
-            <!-- Botón principal: aumenta el contador -->
-            <button id="btnSumar" class="btn-sumar" type="button">Sumar</button>
-            <!-- Botón secundario: disminuye el contador -->
-            <button id="btnRestar" class="btn-restar" type="button">Restar</button>
-            <!-- Campo para elegir cuánto aumenta cada vez -->
+            <button id="btnSumar" class="btn-sumar" type="button">
+                Sumar
+            </button>
+            <button id="btnRestar" class="btn-restar" type="button">
+                Restar
+            </button>
             <div class="campo">
                 <label for="paso">Incremento por clic</label>
                 <input type="number" id="paso" value="1" min="1" step="1">
             </div>
         </section>
-        <!-- PANEL 2: estadísticas -->
+        <!------------------------------->
+        <!--|estadisticas_del_contador|-->
+        <!------------------------------->
         <section class="estadisticas">
-            <!-- Cantidad de veces que se presionó un botón -->
             <div class="dato">
                 <span>Clics totales</span>
                 <strong id="clics">0</strong>
             </div>
-            <!-- Valor más alto que ha alcanzado el contador -->
             <div class="dato">
                 <span>Valor máximo</span>
                 <strong id="maximo">0</strong>
             </div>
         </section>
-        <!-- PANEL 3: historial de los últimos movimientos -->
+        <!------------------------------>
+        <!--|historial_de_movimientos|-->
+        <!------------------------------>
         <section class="panel">
             <div class="historial-cabecera">
                 <h2>Últimos movimientos</h2>
-                <!-- Botón que deja todo en cero -->
                 <button id="btnReiniciar" class="btn-reiniciar" type="button">
                     Reiniciar todo
                 </button>
             </div>
-            <!-- Texto que se muestra cuando aún no hay movimientos -->
-            <p id="vacio" class="vacio">Aún no hay movimientos.</p>
-            <!-- Lista donde JavaScript inserta cada movimiento -->
+            <p id="vacio" class="vacio">
+                Aún no hay movimientos.
+            </p>
             <ul id="historial" class="historial"></ul>
         </section>
     </main>
